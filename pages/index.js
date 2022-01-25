@@ -28,8 +28,6 @@ export default function Home() {
           flexDirection: "column",
           alignItems: "center",
           justifyContent: "center",
-          background:
-            "url(https://wallpaperforu.com/wp-content/uploads/2020/11/astronaut-wallpaper2011162120441-scaled.jpg) no-repeat center center / cover",
         }}
       >
         <Box
