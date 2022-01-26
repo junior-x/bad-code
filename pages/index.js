@@ -1,6 +1,6 @@
 import { Box, Button, Text, TextField, Image } from "@skynexui/components";
 import React from "react";
-import appConfig from "../config";
+import appConfig from "../config.json";
 
 const Title = (props) => {
   const Tag = props.tag;
@@ -20,6 +20,7 @@ export default function Home() {
   const [username, setUsername] = React.useState("junior-x");
   return (
     <>
+      <GlobalStyle/>
       <Box
         styleSheet={{
           minHeight: "100vh",
@@ -28,27 +29,9 @@ export default function Home() {
           flexDirection: "column",
           alignItems: "center",
           justifyContent: "center",
+          backgroundColor: "#FAFAFA",
         }}
       >
-        {/* <Box
-          styleSheet={{
-            fontWeight: "500",
-            width: "90%",
-            maxWidth: "700px",
-            textAlign: "center",
-            padding: "12px",
-            color: "white",
-            backgroundColor: `${appConfig.theme.colors.primary[500]}60`,
-            boxShadow: "0 8px 32px 0 rgba( 31, 38, 135, 0.37 )",
-            backdropFilter: "blur( 17px )",
-            borderRadius: " 5px 5px 0 0",
-            border: "1px solid rgba( 255, 255, 255, 0.18 )",
-            borderBottom: "0",
-          }}
-        >
-          Um chat para todos que desejam, como um foguete, decolar na
-          programação.
-        </Box> */}
         <Box
           styleSheet={{
             display: "flex",
@@ -58,12 +41,13 @@ export default function Home() {
               xs: "column",
               md: "row",
             },
-            width: "90%",
-            maxWidth: "700px",
+            width: "100%",
+            maxWidth: "720px",
             borderRadius: "15px 15px 15px 15px",
             padding: "32px",
             boxShadow: "0 2px 10px 0 rgb(0 0 0 / 20%)",
             backgroundColor: `${appConfig.theme.colors.neutrals[700]}f1`,
+            boxShadow: "9px 9px #FAFAFA, 10px 10px #313D49",
           }}
         >
         
@@ -90,32 +74,26 @@ export default function Home() {
               {appConfig.name}
             </Text>
             <TextField
-            onChange={(event) => {
-                const value = event.target.value;
-                setUsername(value);
-            }}
-            fullWidth
-            textFieldColors={{
+              fullWidth
+              textFieldColors={{
                 neutral: {
-                textColor: appConfig.theme.colors.neutrals[200],
-                mainColor: appConfig.theme.colors.neutrals[900],
-                mainColorHighlight: appConfig.theme.colors.primary[500],
-                backgroundColor: appConfig.theme.colors.neutrals[800],
+                  textColor: appConfig.theme.colors.neutrals[200],
+                  mainColor: appConfig.theme.colors.neutrals[900],
+                  mainColorHighlight: appConfig.theme.colors.primary[500],
+                  backgroundColor: appConfig.theme.colors.neutrals[800],
                 },
-            }}
+              }}
             />
             <Button
-            type="submit"
-            label="Entrar"
-            styleSheet={{
-                width: "100%",
-            }}
-            buttonColors={{
+              type='submit'
+              label='Entrar'
+              fullWidth
+              buttonColors={{
                 contrastColor: appConfig.theme.colors.neutrals["000"],
-                mainColor: appConfig.theme.colors.primary[550],
+                mainColor: appConfig.theme.colors.primary[500],
                 mainColorLight: appConfig.theme.colors.primary[400],
-                mainColorStrong: appConfig.theme.colors.primary[700],
-            }}
+                mainColorStrong: appConfig.theme.colors.primary[600],
+              }}
             />
 
             <Text
@@ -130,8 +108,6 @@ export default function Home() {
             </Text>
             
           </Box>
-
-          
 
           <Box
             styleSheet={{
@@ -180,5 +156,34 @@ export default function Home() {
         </Box>
       </Box>
     </>
+  );
+}
+
+function GlobalStyle() {
+  return (
+    <style global jsx>{`
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        list-style: none;
+      }
+      body {
+        font-family: 'Open Sans', sans-serif;
+      }
+      /* App fit Height */ 
+      html, body, #__next {
+        min-height: 100vh;
+        display: flex;
+        flex: 1;
+      }
+      #__next {
+        flex: 1;
+      }
+      #__next > * {
+        flex: 1;
+      }
+      /* ./App fit Height */ 
+    `}</style>
   );
 }
