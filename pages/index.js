@@ -2,6 +2,7 @@ import { Box, Button, Text, TextField, Image } from "@skynexui/components";
 import React from "react";
 import appConfig from "../config.json";
 
+
 function Titulo(props) {
   const Tag = props.tag || 'h1';
   return (
@@ -53,28 +54,18 @@ export default function Home() {
           }}
         >
         
-          <Box
+        <Box
             as="form"
             styleSheet={{
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
-              justifyContent: "center",
-              width: { xs: "100%", sm: "50%" },
-              textAlign: "center",
-              marginBottom: "32px",
+              display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center',
+              width: { xs: '100%', sm: '50%' }, textAlign: 'center', marginBottom: '32px',
             }}
           >
-            <Title tag="h2">Boas vindas de volta!</Title>
-            <Text
-              variant="body3"
-              styleSheet={{
-                marginBottom: "32px",
-                color: appConfig.theme.colors.neutrals[250],
-              }}
-            >
+            <Titulo tag="h2">Boas vindas de volta!</Titulo>
+            <Text variant="body3" styleSheet={{ marginBottom: '32px', color: appConfig.theme.colors.neutrals[300] }}>
               {appConfig.name}
             </Text>
+
             <TextField
               fullWidth
               textFieldColors={{
@@ -97,18 +88,6 @@ export default function Home() {
                 mainColorStrong: appConfig.theme.colors.primary[600],
               }}
             />
-
-            <Text
-              variant="body4"
-              styleSheet={{
-                marginTop: "32px",
-                color: appConfig.theme.colors.neutrals[250],
-              }}
-            >
-                <Title tag="h5"s >Não tem cadastro?</Title>
-                {appConfig.singUp}
-            </Text>
-            
           </Box>
 
           <Box
@@ -154,13 +133,11 @@ export default function Home() {
               {username}
             </Text>
           </Box>
-          {/* Photo Area */}
         </Box>
       </Box>
     </>
   );
 }
-
 function GlobalStyle() {
   return (
     <style global jsx>{`
@@ -176,7 +153,7 @@ function GlobalStyle() {
       /* App fit Height */ 
       html, body, #__next {
         min-height: 100vh;
-        display: flex;s
+        display: flex;
         flex: 1;
       }
       #__next {
