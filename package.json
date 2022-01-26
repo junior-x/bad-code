@@ -14,7 +14,7 @@
   },
   "scripts": {
     "dev": "next dev",
-    "build": "CI= react-scripts build",
+    "build": "next build",
     "start": "next start",
     "lint": "next lint"
     
