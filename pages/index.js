@@ -1,6 +1,6 @@
 import { Box, Button, Text, TextField, Image } from "@skynexui/components";
 import React from "react";
-import appConfig from "../config.json";
+import appConfig from "../config";
 
 const Title = (props) => {
   const Tag = props.tag;
@@ -30,7 +30,7 @@ export default function Home() {
           justifyContent: "center",
         }}
       >
-        <Box
+        {/* <Box
           styleSheet={{
             fontWeight: "500",
             width: "90%",
@@ -48,7 +48,7 @@ export default function Home() {
         >
           Um chat para todos que desejam, como um foguete, decolar na
           programação.
-        </Box>
+        </Box> */}
         <Box
           styleSheet={{
             display: "flex",
@@ -60,13 +60,13 @@ export default function Home() {
             },
             width: "90%",
             maxWidth: "700px",
-            borderRadius: "0 0 5px 5px",
+            borderRadius: "15px 15px 15px 15px",
             padding: "32px",
             boxShadow: "0 2px 10px 0 rgb(0 0 0 / 20%)",
             backgroundColor: `${appConfig.theme.colors.neutrals[700]}f1`,
           }}
         >
-          {/* Formulário */}
+        
           <Box
             as="form"
             styleSheet={{
@@ -89,37 +89,50 @@ export default function Home() {
             >
               {appConfig.name}
             </Text>
-
             <TextField
-              onChange={(event) => {
+            onChange={(event) => {
                 const value = event.target.value;
                 setUsername(value);
-              }}
-              fullWidth
-              textFieldColors={{
+            }}
+            fullWidth
+            textFieldColors={{
                 neutral: {
-                  textColor: appConfig.theme.colors.neutrals[200],
-                  mainColor: appConfig.theme.colors.neutrals[900],
-                  mainColorHighlight: appConfig.theme.colors.primary[500],
-                  backgroundColor: appConfig.theme.colors.neutrals[800],
+                textColor: appConfig.theme.colors.neutrals[200],
+                mainColor: appConfig.theme.colors.neutrals[900],
+                mainColorHighlight: appConfig.theme.colors.primary[500],
+                backgroundColor: appConfig.theme.colors.neutrals[800],
                 },
-              }}
+            }}
             />
             <Button
-              type="submit"
-              label="Entrar"
-              fullWidth
-              buttonColors={{
+            type="submit"
+            label="Entrar"
+            styleSheet={{
+                width: "100%",
+            }}
+            buttonColors={{
                 contrastColor: appConfig.theme.colors.neutrals["000"],
                 mainColor: appConfig.theme.colors.primary[550],
                 mainColorLight: appConfig.theme.colors.primary[400],
                 mainColorStrong: appConfig.theme.colors.primary[700],
-              }}
+            }}
             />
-          </Box>
-          {/* Formulário */}
 
-          {/* Photo Area */}
+            <Text
+              variant="body4"
+              styleSheet={{
+                marginTop: "32px",
+                color: appConfig.theme.colors.neutrals[250],
+              }}
+            >
+                <Title tag="h5"s >Não tem cadastro?</Title>
+                {appConfig.singUp}
+            </Text>
+            
+          </Box>
+
+          
+
           <Box
             styleSheet={{
               display: "flex",
