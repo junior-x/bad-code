@@ -3,16 +3,23 @@
  <h1 align="center">bad-code</h1>
  <p align="center">🚀</p>
 
- ![App Preview](/assets/screen/01.PNG)
+ ![App Preview](/assets/screen/02.PNG)
 
-<p align="center" font-style="italic"> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.  </p>
+
+
+ | #  |
+| ------------- |
+|  https://bad-code.vercel.app/     |
+
+
+<p align="center" font-style="italic"> Site desenvolvido com o intuito de se identificar com o Discord durante o evento imersão Alura ReactJS/NextJS.  </p>
 
 
 <p align="center">
  <a href="#prototipo">Protótipo</a> •
 </p>
 
-s
+
 ## Tables
 
 | Technologies  |
@@ -24,6 +31,18 @@ s
 
 
 ![App Preview](/assets/screen/01.PNG)
+
+<h1 href="#prototipo" align="center">🧪 PROTOTYPE</h1>
+
+[pt_BR]Desenvolvimento da estrutura de Interface do Usuário e integração com Versel através do NextJS. 
+
+[en_US]User Interface development using ReactJS integrating with NextJS to store API in Vercel data base. 
+
+
+---
+
+
+![App Preview](/assets/screen/02.PNG)
 
 <h1 href="#prototipo" align="center">🧪 PROTOTYPE</h1>
 
