@@ -6,10 +6,10 @@
  ![App Preview](/assets/screen/02.PNG)
 
 
+[<img src="/assets/screen/react.pngs" width="300px">](https://bad-code.vercel.app/ )
 
- | #  |
-| ------------- |
-|  https://bad-code.vercel.app/     |
+[<img src="/assets/screen/figma.svg">](https://www.figma.com/@juniorx)
+
 
 
 <p align="center" font-style="italic"> Site desenvolvido com o intuito de se identificar com o Discord durante o evento imersão Alura ReactJS/NextJS.  </p>
@@ -43,6 +43,18 @@
 
 
 ![App Preview](/assets/screen/02.PNG)
+
+<h1 href="#prototipo" align="center">🧪 PROTOTYPE</h1>
+
+[pt_BR]Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+
+[en_US]Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+
+
+---
+
+
+![App Preview](/assets/screen/03.PNG)
 
 <h1 href="#prototipo" align="center">🧪 PROTOTYPE</h1>
 

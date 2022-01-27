@@ -21,7 +21,7 @@ function Titulo(props) {
 }
 
 export default function Home() {
-  const [username, setUsername] = React.useState("junior-x");
+  const [username, setUsername] = React.useState("ello");
   const roteamento = useRouter();
 
   return (
@@ -34,7 +34,7 @@ export default function Home() {
           flexDirection: "column",
           alignItems: "center",
           justifyContent: "center",
-          backgroundColor: "#FAFAFA",
+          backgroundColor: "#837FB1",
         }}
       >
         <Box
@@ -52,7 +52,7 @@ export default function Home() {
             padding: "32px",
             boxShadow: "0 2px 10px 0 rgb(0 0 0 / 20%)",
             backgroundColor: `${appConfig.theme.colors.neutrals[700]}f1`,
-            boxShadow: "9px 9px #FAFAFA, 10px 10px #313D49",
+            boxShadow: "9px 9px #837FB1, 10px 10px #313D49",
           }}
         >
         
@@ -72,9 +72,9 @@ export default function Home() {
               marginTop: '32px',
             }}
           >
-            <Titulo tag="h2">Bem Vindo de volta!  :)</Titulo>
+            <Titulo tag="h2">Sing Up!  :)</Titulo>
             <Text variant="body3" styleSheet={{ marginBottom: '32px', color: appConfig.theme.colors.neutrals[300] }}>
-              {appConfig.name + " - " + appConfig.logIn}
+              {appConfig.name}
             </Text>
 
             <TextField
@@ -106,10 +106,110 @@ export default function Home() {
                   backgroundColor: appConfig.theme.colors.neutrals[800],
                 },
               }}
+            /><TextField
+              fullWidth
+              type="password"
+              placeholder="Password"
+              textFieldColors={{
+                neutral: {
+                  textColor: appConfig.theme.colors.neutrals[200],
+                  mainColor: appConfig.theme.colors.neutrals[900],
+                  mainColorHighlight: appConfig.theme.colors.primary[500],
+                  backgroundColor: appConfig.theme.colors.neutrals[800],
+                },
+              }}
+            /><TextField
+              fullWidth
+              type="password"
+              placeholder="Password"
+              textFieldColors={{
+                neutral: {
+                  textColor: appConfig.theme.colors.neutrals[200],
+                  mainColor: appConfig.theme.colors.neutrals[900],
+                  mainColorHighlight: appConfig.theme.colors.primary[500],
+                  backgroundColor: appConfig.theme.colors.neutrals[800],
+                },
+              }}
+            /><TextField
+              fullWidth
+              type="password"
+              placeholder="Password"
+              textFieldColors={{
+                neutral: {
+                  textColor: appConfig.theme.colors.neutrals[200],
+                  mainColor: appConfig.theme.colors.neutrals[900],
+                  mainColorHighlight: appConfig.theme.colors.primary[500],
+                  backgroundColor: appConfig.theme.colors.neutrals[800],
+                },
+              }}
+            />
+            <Box styleSheet={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "space-around",
+            flexDirection: {
+              xs: "column",
+              md: "row",
+            },
+            width: "90%",
+            borderRadius: "15px 15px 15px 15px",
+            }} >
+                <TextField
+                fullWidth
+                type="password"
+                placeholder="Password"
+                textFieldColors={{
+                    neutral: {
+                    textColor: appConfig.theme.colors.neutrals[200],
+                    mainColor: appConfig.theme.colors.neutrals[900],
+                    mainColorHighlight: appConfig.theme.colors.primary[500],
+                    backgroundColor: appConfig.theme.colors.neutrals[800],
+                    },
+                }}
+                />
+                <TextField
+                fullWidth
+                type="password"
+                placeholder="Password"
+                textFieldColors={{
+                    neutral: {
+                    textColor: appConfig.theme.colors.neutrals[200],
+                    mainColor: appConfig.theme.colors.neutrals[900],
+                    mainColorHighlight: appConfig.theme.colors.primary[500],
+                    backgroundColor: appConfig.theme.colors.neutrals[800],
+                    },
+                }}
+                />
+            </Box>
+            
+            <TextField
+              fullWidth
+              type="password"
+              placeholder="Password"
+              textFieldColors={{
+                neutral: {
+                  textColor: appConfig.theme.colors.neutrals[200],
+                  mainColor: appConfig.theme.colors.neutrals[900],
+                  mainColorHighlight: appConfig.theme.colors.primary[500],
+                  backgroundColor: appConfig.theme.colors.neutrals[800],
+                },
+              }}
+            /><TextField
+              fullWidth
+              type="password"
+              placeholder="Password"
+              textFieldColors={{
+                neutral: {
+                  textColor: appConfig.theme.colors.neutrals[200],
+                  mainColor: appConfig.theme.colors.neutrals[900],
+                  mainColorHighlight: appConfig.theme.colors.primary[500],
+                  backgroundColor: appConfig.theme.colors.neutrals[800],
+                },
+              }}
             />
             <Button
               type='submit'
-              label='Entrar'
+              label='Cadastrar'
               fullWidth
               buttonColors={{
                 contrastColor: appConfig.theme.colors.neutrals["000"],
@@ -118,39 +218,6 @@ export default function Home() {
                 mainColorStrong: appConfig.theme.colors.primary[600],
               }}
             />
-            <Box
-              as="form"
-              onSubmit={function (infosDoEvento) {
-                infosDoEvento.preventDefault();
-                roteamento.push('/chat');
-            }}
-            styleSheet={{
-              display: 'flex', 
-              flexDirection: 'column', 
-              alignItems: 'center', 
-              justifyContent: 'center',
-              width: { xs: '100%', sm: '50%' }, 
-              textAlign: 'center',
-              marginTop: '32px',
-            }}
-            >
-              <Text variant="body3" styleSheet={{ color: appConfig.theme.colors.neutrals[300]}} >Não tem cadastro?</Text>
-              <Button
-                type="submit"
-                label="Sing Up"
-                styleSheet={{
-                  textDecoration: 'underline',
-                  textColor: "white",
-                  marginBottom: "32px", 
-                }}
-                buttonColors={{
-                  contrastColor: appConfig.theme.colors.neutrals["200"],
-                  mainColor: appConfig.theme.colors.neutrals["600"],
-                  mainColorLight: appConfig.theme.colors.primary[600],
-                  mainColorStrong: appConfig.theme.colors.primary[600],
-                }}
-              />
-            </Box>
           </Box>
 
           <Box
