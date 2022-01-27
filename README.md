@@ -6,9 +6,9 @@
  ![App Preview](/assets/screen/02.PNG)
 
 
-[<img src="/assets/screen/react.png" width="300px">](https://bad-code.vercel.app/ )
+[<img src="/assets/screen/react.png" width="90px" align="center">](https://bad-code.vercel.app/ )
 
-[<img src="/assets/screen/Figma.svg">](https://www.figma.com/@juniorx)
+[<img src="/assets/screen/Figma.svg" width="90px" align="center">](https://www.figma.com/@juniorx)
 
 
 
