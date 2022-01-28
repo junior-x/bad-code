@@ -54,7 +54,6 @@ export default function ChatPage() {
         <Box
             styleSheet={{
                 display: 'flex', 
-                overflow: "hidden",
                 alignItems: 'center', 
                 justifyContent: 'center',
                 backgroundColor: appConfig.theme.colors.neutrals[400],
@@ -68,7 +67,6 @@ export default function ChatPage() {
                     display: 'flex',
                     flexDirection: 'column',
                     flex: 1,
-                    overflow: "hidden",
                     boxShadow: '0 2px 10px 0 rgb(0 0 0 / 20%)',
                     borderRadius: '5px',
                     backgroundColor: appConfig.theme.colors.neutrals[700],
@@ -97,7 +95,6 @@ export default function ChatPage() {
                         as="form"
                         styleSheet={{
                             display: 'flex',
-                            overflow: "hidden",
                             alignItems: 'center',
                         }}
                     >
@@ -115,6 +112,8 @@ export default function ChatPage() {
                             }}
                             placeholder="Insira sua mensagem aqui..."
                             type="textarea"
+                            rounded='md'
+                            size='md'
                             styleSheet={{
                                 width: '100%',
                                 border: '0',
@@ -125,7 +124,17 @@ export default function ChatPage() {
                                 marginRight: '12px',
                                 color: appConfig.theme.colors.neutrals[200],
                             }}
+                        >
+                            <Button 
+                            iconName="arrowRight" 
+                            buttonColors={{
+                                contrastColor: appConfig.theme.colors.neutrals["000"],
+                                mainColor: appConfig.theme.colors.primary[500],
+                                mainColorLight: appConfig.theme.colors.primary[400],
+                                mainColorStrong: appConfig.theme.colors.primary[600],
+                            }}
                         />
+                        </TextField>
                     </Box>
                 </Box>
             </Box>
@@ -164,6 +173,7 @@ function MessageList(props) {
             tag="ul"
             styleSheet={{
                 overflow: 'scroll',
+                overflowX: "hidden",
                 display: 'flex',
                 flexDirection: 'column-reverse',
                 flex: 1,
