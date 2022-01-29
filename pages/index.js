@@ -2,6 +2,7 @@ import { Box, Button, Text, TextField, Image } from "@skynexui/components";
 import React from "react";
 import appConfig from "../config.json";
 import { useRouter } from "next/router";
+import { useMediaQuery } from "react-responsive"
 
 function Titulo(props) {
   const Tag = props.tag || 'h1';
@@ -21,7 +22,7 @@ function Titulo(props) {
 
 export default function Home() {
   const [username, setUsername] = React.useState("junior-x");
-  const roteamento = useRouter();
+  const roteamento = useRouter(); 
 
   return (
     <>
