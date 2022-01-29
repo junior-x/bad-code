@@ -4,79 +4,85 @@ import appConfig from "../config.json";
 import { useRouter } from "next/router";
 
 function Titulo(props) {
-  const Tag = props.tag || 'h1';
+  
+  const Tag = props.tag || "h1";
   return (
     <>
       <Tag>{props.children}</Tag>
       <style jsx>{`
-            ${Tag} {
-                color: ${appConfig.theme.colors.neutrals['000']};
-                font-size: 24px;
-                font-weight: 600;
-            }
-            `}</style>
+        ${Tag} {
+          color: ${appConfig.theme.colors.neutrals["000"]};
+          font-size: 24px;
+          font-weight: 600;
+        }
+      `}</style>
     </>
   );
 }
 
 export default function HomeMobile() {
-    const [username, setUsername] = React.useState("junior-x");
-    const roteamento = useRouter();
-  
-    return (
-      <>
+  const [username, setUsername] = React.useState("junior-x");
+  const roteamento = useRouter();
+
+  return (
+    <>
+      <Box
+        styleSheet={{
+          minHeight: "100vh",
+          padding: "20px 0",
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          justifyContent: "center",
+          backgroundColor: "#FAFAFA",
+          margin: "36px",
+        }}
+      >
         <Box
           styleSheet={{
-            minHeight: "100vh",
-            padding: "20px 0",
             display: "flex",
-            flexDirection: "column",
             alignItems: "center",
-            justifyContent: "center",
-            backgroundColor: "#FAFAFA",
+            justifyContent: "space-between",
+            flexDirection: {
+              xs: "column",
+              md: "row",
+            },
+            width: "100%",
+            maxWidth: "720px",
+            borderRadius: "15px 15px 15px 15px",
+            padding: "32px",
+            boxShadow: "0 2px 10px 0 rgb(0 0 0 / 20%)",
+            backgroundColor: `${appConfig.theme.colors.neutrals[700]}f1`,
+            boxShadow: "9px 9px #FAFAFA, 10px 10px #313D49",
           }}
         >
-        
           <Box
+            as="form"
+            onSubmit={function (infosDoEvento) {
+              infosDoEvento.preventDefault();
+              roteamento.push(`/chat?username=${username}`);
+            }}
             styleSheet={{
               display: "flex",
+              flexDirection: "column",
               alignItems: "center",
-              justifyContent: "space-between",
-              flexDirection: {
-                xs: "column",
-                md: "row",
-              },
-              width: "100%",
-              maxWidth: "720px",
-              borderRadius: "15px 15px 15px 15px",
-              padding: "32px",
-              boxShadow: "0 2px 10px 0 rgb(0 0 0 / 20%)",
-              backgroundColor: `${appConfig.theme.colors.neutrals[700]}f1`,
-              boxShadow: "9px 9px #FAFAFA, 10px 10px #313D49",
+              justifyContent: "center",
+              width: { xs: "100%", sm: "60%" },
+              textAlign: "center",
+              marginTop: "32px",
             }}
           >
-          
-          <Box
-              as="form"
-              onSubmit={function (infosDoEvento) {
-                infosDoEvento.preventDefault();
-                roteamento.push(`/chat?username=${username}`);
-              }}
+            <Titulo tag="h2">Bem Vindo de volta! :)</Titulo>
+            <Text
+              variant="body3"
               styleSheet={{
-                display: 'flex', 
-                flexDirection: 'column', 
-                alignItems: 'center', 
-                justifyContent: 'center',
-                width: { xs: '100%', sm: '60%' }, 
-                textAlign: 'center', 
-                marginTop: '32px',
+                marginBottom: "32px",
+                color: appConfig.theme.colors.neutrals[300],
               }}
             >
-              <Titulo tag="h2">Bem Vindo de volta!  :)</Titulo>
-              <Text variant="body3" styleSheet={{ marginBottom: '32px', color: appConfig.theme.colors.neutrals[300] }}>
-                {appConfig.name + " - " + appConfig.logIn}
-              </Text>
-              <Box
+              {appConfig.name + " - " + appConfig.logIn}
+            </Text>
+            <Box
               styleSheet={{
                 display: "flex",
                 flexDirection: "column",
@@ -120,85 +126,88 @@ export default function HomeMobile() {
                 {username}
               </Text>
             </Box>
-              <TextField
-                fullWidth
-                placeholder="Username"
-                onChange={function (event) {
-                  console.log('usuario digitou', event.target.value);
-                  const valor = event.target.value;
-                  setUsername(valor);
-                }}
-                textFieldColors={{
-                  neutral: {
-                    textColor: appConfig.theme.colors.neutrals[200],
-                    mainColor: appConfig.theme.colors.neutrals[900],
-                    mainColorHighlight: appConfig.theme.colors.primary[500],
-                    backgroundColor: appConfig.theme.colors.neutrals[800],
-                  },
-                }}
-              />
-              <TextField
-                fullWidth
-                type="password"
-                placeholder="Password"
-                textFieldColors={{
-                  neutral: {
-                    textColor: appConfig.theme.colors.neutrals[200],
-                    mainColor: appConfig.theme.colors.neutrals[900],
-                    mainColorHighlight: appConfig.theme.colors.primary[500],
-                    backgroundColor: appConfig.theme.colors.neutrals[800],
-                  },
-                }}
-              />
+            <TextField
+              fullWidth
+              placeholder="Username"
+              onChange={function (event) {
+                console.log("usuario digitou", event.target.value);
+                const valor = event.target.value;
+                setUsername(valor);
+              }}
+              textFieldColors={{
+                neutral: {
+                  textColor: appConfig.theme.colors.neutrals[200],
+                  mainColor: appConfig.theme.colors.neutrals[900],
+                  mainColorHighlight: appConfig.theme.colors.primary[500],
+                  backgroundColor: appConfig.theme.colors.neutrals[800],
+                },
+              }}
+            />
+            <TextField
+              fullWidth
+              type="password"
+              placeholder="Password"
+              textFieldColors={{
+                neutral: {
+                  textColor: appConfig.theme.colors.neutrals[200],
+                  mainColor: appConfig.theme.colors.neutrals[900],
+                  mainColorHighlight: appConfig.theme.colors.primary[500],
+                  backgroundColor: appConfig.theme.colors.neutrals[800],
+                },
+              }}
+            />
+            <Button
+              type="submit"
+              label="Entrar"
+              fullWidth
+              buttonColors={{
+                contrastColor: appConfig.theme.colors.neutrals["000"],
+                mainColor: appConfig.theme.colors.primary[500],
+                mainColorLight: appConfig.theme.colors.primary[400],
+                mainColorStrong: appConfig.theme.colors.primary[600],
+              }}
+            />
+            <Box
+              as="form"
+              onSubmit={function (infosDoEvento) {
+                infosDoEvento.preventDefault();
+                roteamento.push("/singUp");
+              }}
+              styleSheet={{
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+                justifyContent: "center",
+                width: { xs: "100%", sm: "50%" },
+                textAlign: "center",
+                marginTop: "32px",
+              }}
+            >
+              <Text
+                variant="body3"
+                styleSheet={{ color: appConfig.theme.colors.neutrals[300] }}
+              >
+                Não tem cadastro?
+              </Text>
               <Button
-                type='submit'
-                label='Entrar'
-                fullWidth
+                type="submit"
+                label="Sing Up"
+                styleSheet={{
+                  textDecoration: "underline",
+                  textColor: "white",
+                  marginBottom: "32px",
+                }}
                 buttonColors={{
-                  contrastColor: appConfig.theme.colors.neutrals["000"],
-                  mainColor: appConfig.theme.colors.primary[500],
-                  mainColorLight: appConfig.theme.colors.primary[400],
+                  contrastColor: appConfig.theme.colors.neutrals["200"],
+                  mainColor: appConfig.theme.colors.neutrals["600"],
+                  mainColorLight: appConfig.theme.colors.primary[600],
                   mainColorStrong: appConfig.theme.colors.primary[600],
                 }}
               />
-              <Box
-                as="form"
-                onSubmit={function (infosDoEvento) {
-                  infosDoEvento.preventDefault();
-                  roteamento.push('/singUp');
-                }}
-                styleSheet={{
-                  display: 'flex', 
-                  flexDirection: 'column', 
-                  alignItems: 'center', 
-                  justifyContent: 'center',
-                  width: { xs: '100%', sm: '50%' }, 
-                  textAlign: 'center',
-                  marginTop: '32px',
-                }}
-              >
-                <Text variant="body3" styleSheet={{ color: appConfig.theme.colors.neutrals[300]}} >Não tem cadastro?</Text>
-                <Button
-                  type="submit"
-                  label="Sing Up"
-                  styleSheet={{
-                    textDecoration: 'underline',
-                    textColor: "white",
-                    marginBottom: "32px", 
-                  }}
-                  buttonColors={{
-                    contrastColor: appConfig.theme.colors.neutrals["200"],
-                    mainColor: appConfig.theme.colors.neutrals["600"],
-                    mainColorLight: appConfig.theme.colors.primary[600],
-                    mainColorStrong: appConfig.theme.colors.primary[600],
-                  }}
-                />
-              </Box>
             </Box>
           </Box>
         </Box>
-      </>
-    );
-  }
-  
-  
+      </Box>
+    </>
+  );
+}

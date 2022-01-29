@@ -2,11 +2,11 @@ import React from "react";
 import App from "./App";
 
 function LogIn() {
-  return(
+  return (
     <>
-      <App/>
+      <App />
     </>
-  )
+  );
 }
 
 export default LogIn;

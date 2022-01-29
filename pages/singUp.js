@@ -3,19 +3,18 @@ import React from "react";
 import appConfig from "../config.json";
 import { useRouter } from "next/router";
 
-
 function Titulo(props) {
-  const Tag = props.tag || 'h1';
+  const Tag = props.tag || "h1";
   return (
     <>
       <Tag>{props.children}</Tag>
       <style jsx>{`
-            ${Tag} {
-                color: ${appConfig.theme.colors.neutrals['000']};
-                font-size: 24px;
-                font-weight: 600;
-            }
-            `}</style>
+        ${Tag} {
+          color: ${appConfig.theme.colors.neutrals["000"]};
+          font-size: 24px;
+          font-weight: 600;
+        }
+      `}</style>
     </>
   );
 }
@@ -23,6 +22,20 @@ function Titulo(props) {
 export default function Home() {
   const [username, setUsername] = React.useState("ello");
   const roteamento = useRouter();
+
+  const state = {
+    button: 1,
+  };
+
+  const onSubmit = (e) => {
+    e.preventDefault();
+    if (state.button === 1) {
+      roteamento.push(`/chat?username=${username}`);
+    }
+    if (state.button === 2) {
+      roteamento.push(`/?`);
+    }
+  };
 
   return (
     <>
@@ -55,33 +68,35 @@ export default function Home() {
             boxShadow: "9px 9px #837FB1, 10px 10px #313D49",
           }}
         >
-        
-        <Box
+          <Box
             as="form"
-            onSubmit={function (infosDoEvento) {
-              infosDoEvento.preventDefault();
-              roteamento.push('/chat');
-            }}
+            onSubmit={onSubmit}
             styleSheet={{
-              display: 'flex', 
-              flexDirection: 'column', 
-              alignItems: 'center', 
-              justifyContent: 'center',
-              width: { xs: '100%', sm: '60%' }, 
-              textAlign: 'center', 
-              marginTop: '32px',
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              justifyContent: "center",
+              width: { xs: "100%", sm: "60%" },
+              marginTop: "32px",
             }}
           >
-            <Titulo tag="h2">Sing Up!  :)</Titulo>
-            <Text variant="body3" styleSheet={{ marginBottom: '32px', color: appConfig.theme.colors.neutrals[300] }}>
+            <Titulo tag="h2">Sing Up! :)</Titulo>
+            <Text
+              variant="body3"
+              styleSheet={{
+                marginBottom: "32px",
+                color: appConfig.theme.colors.neutrals[300],
+              }}
+            >
               {appConfig.name}
             </Text>
 
             <TextField
               fullWidth
-              placeholder="Username"
+              label="Username"
+              styleSheet={{ Content: "start" }}
               onChange={function (event) {
-                console.log('usuario digitou', event.target.value);
+                console.log("usuario digitou", event.target.value);
                 const valor = event.target.value;
                 setUsername(valor);
               }}
@@ -97,43 +112,7 @@ export default function Home() {
             <TextField
               fullWidth
               type="password"
-              placeholder="Password"
-              textFieldColors={{
-                neutral: {
-                  textColor: appConfig.theme.colors.neutrals[200],
-                  mainColor: appConfig.theme.colors.neutrals[900],
-                  mainColorHighlight: appConfig.theme.colors.primary[500],
-                  backgroundColor: appConfig.theme.colors.neutrals[800],
-                },
-              }}
-            /><TextField
-              fullWidth
-              type="password"
-              placeholder="Password"
-              textFieldColors={{
-                neutral: {
-                  textColor: appConfig.theme.colors.neutrals[200],
-                  mainColor: appConfig.theme.colors.neutrals[900],
-                  mainColorHighlight: appConfig.theme.colors.primary[500],
-                  backgroundColor: appConfig.theme.colors.neutrals[800],
-                },
-              }}
-            /><TextField
-              fullWidth
-              type="password"
-              placeholder="Password"
-              textFieldColors={{
-                neutral: {
-                  textColor: appConfig.theme.colors.neutrals[200],
-                  mainColor: appConfig.theme.colors.neutrals[900],
-                  mainColorHighlight: appConfig.theme.colors.primary[500],
-                  backgroundColor: appConfig.theme.colors.neutrals[800],
-                },
-              }}
-            /><TextField
-              fullWidth
-              type="password"
-              placeholder="Password"
+              label="Password"
               textFieldColors={{
                 neutral: {
                   textColor: appConfig.theme.colors.neutrals[200],
@@ -143,49 +122,10 @@ export default function Home() {
                 },
               }}
             />
-            <Box styleSheet={{
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "space-around",
-            flexDirection: {
-              xs: "column",
-              md: "row",
-            },
-            width: "90%",
-            borderRadius: "15px 15px 15px 15px",
-            }} >
-                <TextField
-                fullWidth
-                type="password"
-                placeholder="Password"
-                textFieldColors={{
-                    neutral: {
-                    textColor: appConfig.theme.colors.neutrals[200],
-                    mainColor: appConfig.theme.colors.neutrals[900],
-                    mainColorHighlight: appConfig.theme.colors.primary[500],
-                    backgroundColor: appConfig.theme.colors.neutrals[800],
-                    },
-                }}
-                />
-                <TextField
-                fullWidth
-                type="password"
-                placeholder="Password"
-                textFieldColors={{
-                    neutral: {
-                    textColor: appConfig.theme.colors.neutrals[200],
-                    mainColor: appConfig.theme.colors.neutrals[900],
-                    mainColorHighlight: appConfig.theme.colors.primary[500],
-                    backgroundColor: appConfig.theme.colors.neutrals[800],
-                    },
-                }}
-                />
-            </Box>
-            
             <TextField
               fullWidth
-              type="password"
-              placeholder="Password"
+              type="email"
+              label="E-mail"
               textFieldColors={{
                 neutral: {
                   textColor: appConfig.theme.colors.neutrals[200],
@@ -194,10 +134,25 @@ export default function Home() {
                   backgroundColor: appConfig.theme.colors.neutrals[800],
                 },
               }}
-            /><TextField
+            />
+            <TextField
               fullWidth
-              type="password"
-              placeholder="Password"
+              type="email"
+              label="Confirm E-mail"
+              textFieldColors={{
+                neutral: {
+                  textColor: appConfig.theme.colors.neutrals[200],
+                  mainColor: appConfig.theme.colors.neutrals[900],
+                  mainColorHighlight: appConfig.theme.colors.primary[500],
+                  backgroundColor: appConfig.theme.colors.neutrals[800],
+                },
+              }}
+            />
+            <TextField
+              fullWidth
+              type="phone"
+              label="Celular"
+              styleSheet={{ marginBottom: "21px" }}
               textFieldColors={{
                 neutral: {
                   textColor: appConfig.theme.colors.neutrals[200],
@@ -208,16 +163,54 @@ export default function Home() {
               }}
             />
             <Button
-              type='submit'
-              label='Cadastrar'
+              type="submit"
+              label="Cadastrar"
+              onClick={() => (state.button = 1)}
               fullWidth
               buttonColors={{
-                contrastColor: appConfig.theme.colors.neutrals["000"],
-                mainColor: appConfig.theme.colors.primary[500],
-                mainColorLight: appConfig.theme.colors.primary[400],
-                mainColorStrong: appConfig.theme.colors.primary[600],
+                contrastColor: appConfig.theme.colors.neutrals["600"],
+                mainColor: appConfig.theme.colors.primary["000"],
+                mainColorLight: appConfig.theme.colors.primary[200],
+                mainColorStrong: appConfig.theme.colors.neutrals[200],
               }}
             />
+            <Box
+              onSubmit={onSubmit}
+              styleSheet={{
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+                justifyContent: "center",
+                width: { xs: "100%", sm: "50%" },
+                textAlign: "center",
+                marginTop: "32px",
+              }}
+            >
+              <Text
+                variant="body3"
+                styleSheet={{ color: appConfig.theme.colors.neutrals[300] }}
+              >
+                Não tem cadastro?
+              </Text>
+              <Button
+                type="submit"
+                label="Sing Up"
+                onClick={() => (state.button = 2)}
+                styleSheet={{
+                  textDecoration: "underline",
+                  textColor: "white",
+                  marginBottom: "32px",
+                }}
+                buttonColors={{
+                  contrastColor: appConfig.theme.colors.neutrals["200"],
+                  mainColor: appConfig.theme.colors.neutrals["600"],
+                  mainColorLight: appConfig.theme.colors.primary[600],
+                  mainColorStrong: appConfig.theme.colors.primary[600],
+                }}
+              />
+            </Box>
+
+            {/* <LogInTxt /> */}
           </Box>
 
           <Box
@@ -268,4 +261,3 @@ export default function Home() {
     </>
   );
 }
-

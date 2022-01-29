@@ -4,24 +4,39 @@ import appConfig from "../config.json";
 import { useRouter } from "next/router";
 
 function Titulo(props) {
-  const Tag = props.tag || 'h1';
+  
+  const Tag = props.tag || "h1";
   return (
     <>
       <Tag>{props.children}</Tag>
       <style jsx>{`
-            ${Tag} {
-                color: ${appConfig.theme.colors.neutrals['000']};
-                font-size: 24px;
-                font-weight: 600;
-            }
-            `}</style>
+        ${Tag} {
+          color: ${appConfig.theme.colors.neutrals["000"]};
+          font-size: 24px;
+          font-weight: 600;
+        }
+      `}</style>
     </>
   );
 }
 
 export default function HomeDesktop() {
   const [username, setUsername] = React.useState("junior-x");
-  const roteamento = useRouter(); 
+  const roteamento = useRouter();
+
+  const state = {
+    button: 1,
+  };
+
+  const onSubmit = (e) => {
+    e.preventDefault();
+    if (state.button === 1) {
+      roteamento.push(`/chat?username=${username}`);
+    }
+    if (state.button === 2) {
+      roteamento.push(`/singUp`);
+    }
+  };
 
   return (
     <>
@@ -54,26 +69,28 @@ export default function HomeDesktop() {
             boxShadow: "9px 9px #FAFAFA, 10px 10px #313D49",
           }}
         >
-        
-        <Box
+          <Box
             as="form"
             id="entrar"
-            onSubmit={function (infosDoEvento) {
-              infosDoEvento.preventDefault();
-              roteamento.push(`/chat?username=${username}`);
-            }}
+            onSubmit={onSubmit}
             styleSheet={{
-              display: 'flex', 
-              flexDirection: 'column', 
-              alignItems: 'center', 
-              justifyContent: 'center',
-              width: { xs: '100%', sm: '60%' }, 
-              textAlign: 'center', 
-              marginTop: '32px',
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              justifyContent: "center",
+              width: { xs: "100%", sm: "60%" },
+              textAlign: "center",
+              marginTop: "32px",
             }}
           >
-            <Titulo tag="h2">Bem Vindo de volta!  :)</Titulo>
-            <Text variant="body3" styleSheet={{ marginBottom: '32px', color: appConfig.theme.colors.neutrals[300] }}>
+            <Titulo tag="h2">Bem Vindo de volta! :)</Titulo>
+            <Text
+              variant="body3"
+              styleSheet={{
+                marginBottom: "32px",
+                color: appConfig.theme.colors.neutrals[300],
+              }}
+            >
               {appConfig.name + " - " + appConfig.logIn}
             </Text>
 
@@ -81,7 +98,7 @@ export default function HomeDesktop() {
               fullWidth
               placeholder="Username"
               onChange={function (event) {
-                console.log('usuario digitou', event.target.value);
+                console.log("usuario digitou", event.target.value);
                 const valor = event.target.value;
                 setUsername(valor);
               }}
@@ -108,9 +125,10 @@ export default function HomeDesktop() {
               }}
             />
             <Button
-              type='submit'
+              type="submit"
               id="entrar"
-              label='Entrar'
+              label="Entrar"
+              onClick={() => (state.button = 1)}
               fullWidth
               buttonColors={{
                 contrastColor: appConfig.theme.colors.neutrals["000"],
@@ -120,31 +138,31 @@ export default function HomeDesktop() {
               }}
             />
             <Box
-              as="form"
-              id="singUp"
-              onSubmit={function (infosDoEvento) {
-                infosDoEvento.preventDefault();
-                roteamento.push('/singUp');
-            }}
-            styleSheet={{
-              display: 'flex', 
-              flexDirection: 'column', 
-              alignItems: 'center', 
-              justifyContent: 'center',
-              width: { xs: '100%', sm: '50%' }, 
-              textAlign: 'center',
-              marginTop: '32px',
-            }}
+              styleSheet={{
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+                justifyContent: "center",
+                width: { xs: "100%", sm: "50%" },
+                textAlign: "center",
+                marginTop: "32px",
+              }}
             >
-              <Text variant="body3" styleSheet={{ color: appConfig.theme.colors.neutrals[300]}} >Não tem cadastro?</Text>
+              <Text
+                variant="body3"
+                styleSheet={{ color: appConfig.theme.colors.neutrals[300] }}
+              >
+                Não tem cadastro?
+              </Text>
               <Button
                 type="submit"
                 id="singUp"
                 label="Sing Up"
+                onClick={() => (state.button = 2)}
                 styleSheet={{
-                  textDecoration: 'underline',
+                  textDecoration: "underline",
                   textColor: "white",
-                  marginBottom: "32px", 
+                  marginBottom: "32px",
                 }}
                 buttonColors={{
                   contrastColor: appConfig.theme.colors.neutrals["200"],
@@ -154,7 +172,7 @@ export default function HomeDesktop() {
                 }}
               />
             </Box>
-        </Box>
+          </Box>
 
           <Box
             styleSheet={{
@@ -204,4 +222,3 @@ export default function HomeDesktop() {
     </>
   );
 }
-
