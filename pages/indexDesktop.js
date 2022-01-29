@@ -57,6 +57,7 @@ export default function HomeDesktop() {
         
         <Box
             as="form"
+            id="entrar"
             onSubmit={function (infosDoEvento) {
               infosDoEvento.preventDefault();
               roteamento.push(`/chat?username=${username}`);
@@ -108,6 +109,7 @@ export default function HomeDesktop() {
             />
             <Button
               type='submit'
+              id="entrar"
               label='Entrar'
               fullWidth
               buttonColors={{
@@ -119,9 +121,10 @@ export default function HomeDesktop() {
             />
             <Box
               as="form"
+              id="singUp"
               onSubmit={function (infosDoEvento) {
                 infosDoEvento.preventDefault();
-                roteamento.push('/chat');
+                roteamento.push('/singUp');
             }}
             styleSheet={{
               display: 'flex', 
@@ -136,6 +139,7 @@ export default function HomeDesktop() {
               <Text variant="body3" styleSheet={{ color: appConfig.theme.colors.neutrals[300]}} >Não tem cadastro?</Text>
               <Button
                 type="submit"
+                id="singUp"
                 label="Sing Up"
                 styleSheet={{
                   textDecoration: 'underline',
@@ -150,7 +154,7 @@ export default function HomeDesktop() {
                 }}
               />
             </Box>
-          </Box>
+        </Box>
 
           <Box
             styleSheet={{

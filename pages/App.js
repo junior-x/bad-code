@@ -5,8 +5,8 @@ import HomeMobile from "./indexMobile"
 import HomeDesktop from "./indexDesktop";
 
 const breakPoints = {
-    mobile: "(max-width:768px)",
-    desktop: "(min-width:1024px)",
+    mobile: "(max-width:767px)",
+    desktop: "(min-width:768px)",
 };
 
 function App() {

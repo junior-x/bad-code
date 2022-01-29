@@ -165,17 +165,17 @@ export default function HomeMobile() {
                 as="form"
                 onSubmit={function (infosDoEvento) {
                   infosDoEvento.preventDefault();
-                  roteamento.push('/chat');
-              }}
-              styleSheet={{
-                display: 'flex', 
-                flexDirection: 'column', 
-                alignItems: 'center', 
-                justifyContent: 'center',
-                width: { xs: '100%', sm: '50%' }, 
-                textAlign: 'center',
-                marginTop: '32px',
-              }}
+                  roteamento.push('/singUp');
+                }}
+                styleSheet={{
+                  display: 'flex', 
+                  flexDirection: 'column', 
+                  alignItems: 'center', 
+                  justifyContent: 'center',
+                  width: { xs: '100%', sm: '50%' }, 
+                  textAlign: 'center',
+                  marginTop: '32px',
+                }}
               >
                 <Text variant="body3" styleSheet={{ color: appConfig.theme.colors.neutrals[300]}} >Não tem cadastro?</Text>
                 <Button
