@@ -1,4 +1,4 @@
-import { Box, Button, Text, TextField, Image } from "@skynexui/components";
+import { Box, Button, Text, TextField, Image, Icon } from "@skynexui/components";
 import React from "react";
 import appConfig from "../config.json";
 import { useRouter } from "next/router";
@@ -19,6 +19,7 @@ function Titulo(props) {
     </>
   );
 }
+
 
 export default function HomeDesktop() {
   const [username, setUsername] = React.useState("junior-x");
@@ -145,9 +146,26 @@ export default function HomeDesktop() {
                 justifyContent: "center",
                 width: { xs: "100%", sm: "50%" },
                 textAlign: "center",
-                marginTop: "32px",
               }}
             >
+            <Box styleSheet={{display: "flex", justifyContent: "space-between", width: "63%"}}
+            >
+              <Icon
+                label="Icon Component"
+                name="FaGithub"
+                styleSheet={{height: "90px", fontSize: "30px", color: "#FAFAFA"}}
+              />
+              <Icon
+                label="Icon Component"
+                name="FaFigma"
+                styleSheet={{height: "90px", fontSize: "24px", color: "#FAFAFA"}}
+              />
+              <Icon
+                label="Icon Component"
+                name="FaReact"
+                styleSheet={{height: "90px", fontSize: "30px", color: "#FAFAFA"}}
+              />
+            </Box>
               <Text
                 variant="body3"
                 styleSheet={{ color: appConfig.theme.colors.neutrals[300] }}

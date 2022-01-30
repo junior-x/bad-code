@@ -1,10 +1,9 @@
-import { Box, Button, Text, TextField, Image, Icon } from "@skynexui/components";
+import { Box, Button, Text, TextField, Image } from "@skynexui/components";
 import React from "react";
 import appConfig from "../config.json";
 import { useRouter } from "next/router";
 
 function Titulo(props) {
-  
   const Tag = props.tag || "h1";
   return (
     <>
@@ -20,8 +19,8 @@ function Titulo(props) {
   );
 }
 
-export default function HomeMobile() {
-  const [username, setUsername] = React.useState("junior-x");
+export default function SingUpDesktop() {
+  const [username, setUsername] = React.useState("ello");
   const roteamento = useRouter();
 
   const state = {
@@ -34,7 +33,7 @@ export default function HomeMobile() {
       roteamento.push(`/chat?username=${username}`);
     }
     if (state.button === 2) {
-      roteamento.push(`/singUp`);
+      roteamento.push(`/?`);
     }
   };
 
@@ -48,8 +47,7 @@ export default function HomeMobile() {
           flexDirection: "column",
           alignItems: "center",
           justifyContent: "center",
-          backgroundColor: "#FAFAFA",
-          margin: "36px",
+          backgroundColor: "#837FB1",
         }}
       >
         <Box
@@ -62,28 +60,28 @@ export default function HomeMobile() {
               md: "row",
             },
             width: "100%",
-            maxWidth: "720px",
+            maxWidth: "900px",
             borderRadius: "15px 15px 15px 15px",
-            padding: "32px",
+            paddingHorizontal: "90px",
+            paddingVertical: "30px",
             boxShadow: "0 2px 10px 0 rgb(0 0 0 / 20%)",
             backgroundColor: `${appConfig.theme.colors.neutrals[700]}f1`,
-            boxShadow: "9px 9px #FAFAFA, 10px 10px #313D49",
+            boxShadow: "9px 9px #837FB1, 10px 10px #313D49",
           }}
         >
           <Box
             as="form"
-            onSubmit={ onSubmit }
+            onSubmit={onSubmit}
             styleSheet={{
               display: "flex",
               flexDirection: "column",
               alignItems: "center",
               justifyContent: "center",
               width: { xs: "100%", sm: "60%" },
-              textAlign: "center",
               marginTop: "32px",
             }}
           >
-            <Titulo tag="h2">Bem Vindo de volta! :)</Titulo>
+            <Titulo tag="h2">Sing Up! :)</Titulo>
             <Text
               variant="body3"
               styleSheet={{
@@ -91,55 +89,13 @@ export default function HomeMobile() {
                 color: appConfig.theme.colors.neutrals[300],
               }}
             >
-              {appConfig.name + " - " + appConfig.logIn}
+              {appConfig.name}
             </Text>
-            <Box
-              styleSheet={{
-                display: "flex",
-                flexDirection: "column",
-                alignItems: "center",
-                maxWidth: "200px",
-                padding: "16px",
-                backgroundColor: appConfig.theme.colors.neutrals[800],
-                border: "1px solid",
-                borderColor: appConfig.theme.colors.neutrals[999],
-                borderRadius: "10px",
-                flex: 1,
-                minHeight: "240px",
-                marginBottom: "32px",
-              }}
-            >
-              <Image
-                styleSheet={{
-                  borderRadius: "50%",
-                  marginBottom: "16px",
-                }}
-                src={`https://github.com/${username}.png`}
-              />
-              <Text
-                tag="a"
-                href={`https://github.com/${username}`}
-                variant="body4"
-                styleSheet={{
-                  textDecoration: "none",
-                  color: appConfig.theme.colors.neutrals[200],
-                  backgroundColor: appConfig.theme.colors.neutrals[900],
-                  padding: "3px 10px",
-                  borderRadius: "1000px",
-                }}
-                onMouseOver={(event) => {
-                  event.target.style.textDecoration = "underline";
-                }}
-                onMouseLeave={(event) => {
-                  event.target.style.textDecoration = "none";
-                }}
-              >
-                {username}
-              </Text>
-            </Box>
+
             <TextField
               fullWidth
-              placeholder="Username"
+              label="Username"
+              styleSheet={{ Content: "start" }}
               onChange={function (event) {
                 console.log("usuario digitou", event.target.value);
                 const valor = event.target.value;
@@ -157,7 +113,47 @@ export default function HomeMobile() {
             <TextField
               fullWidth
               type="password"
-              placeholder="Password"
+              label="Password"
+              textFieldColors={{
+                neutral: {
+                  textColor: appConfig.theme.colors.neutrals[200],
+                  mainColor: appConfig.theme.colors.neutrals[900],
+                  mainColorHighlight: appConfig.theme.colors.primary[500],
+                  backgroundColor: appConfig.theme.colors.neutrals[800],
+                },
+              }}
+            />
+            <TextField
+              fullWidth
+              type="email"
+              label="E-mail"
+              textFieldColors={{
+                neutral: {
+                  textColor: appConfig.theme.colors.neutrals[200],
+                  mainColor: appConfig.theme.colors.neutrals[900],
+                  mainColorHighlight: appConfig.theme.colors.primary[500],
+                  backgroundColor: appConfig.theme.colors.neutrals[800],
+                },
+              }}
+            />
+            <TextField
+              fullWidth
+              type="email"
+              label="Confirm E-mail"
+              textFieldColors={{
+                neutral: {
+                  textColor: appConfig.theme.colors.neutrals[200],
+                  mainColor: appConfig.theme.colors.neutrals[900],
+                  mainColorHighlight: appConfig.theme.colors.primary[500],
+                  backgroundColor: appConfig.theme.colors.neutrals[800],
+                },
+              }}
+            />
+            <TextField
+              fullWidth
+              type="phone"
+              label="Celular"
+              styleSheet={{ marginBottom: "21px" }}
               textFieldColors={{
                 neutral: {
                   textColor: appConfig.theme.colors.neutrals[200],
@@ -169,35 +165,18 @@ export default function HomeMobile() {
             />
             <Button
               type="submit"
-              label="Entrar"
-              onClink={() => (state.button = 1)}
+              label="Cadastrar"
+              onClick={() => (state.button = 1)}
               fullWidth
               buttonColors={{
-                contrastColor: appConfig.theme.colors.neutrals["000"],
-                mainColor: appConfig.theme.colors.primary[500],
-                mainColorLight: appConfig.theme.colors.primary[400],
-                mainColorStrong: appConfig.theme.colors.primary[600],
+                contrastColor: appConfig.theme.colors.neutrals["600"],
+                mainColor: appConfig.theme.colors.primary["000"],
+                mainColorLight: appConfig.theme.colors.primary[200],
+                mainColorStrong: appConfig.theme.colors.neutrals[200],
               }}
             />
-              <Box styleSheet={{display: "flex", justifyContent: "space-between", width: "63%"}}>
-              <Icon
-                label="Icon Component"
-                name="FaGithub"
-                styleSheet={{height: "90px", fontSize: "30px", color: "#FAFAFA"}}
-              />
-              <Icon
-                label="Icon Component"
-                name="FaFigma"
-                styleSheet={{height: "90px", fontSize: "24px", color: "#FAFAFA"}}
-              />
-              <Icon
-                label="Icon Component"
-                name="FaReact"
-                styleSheet={{height: "90px", fontSize: "30px", color: "#FAFAFA"}}
-              />
-            </Box>
             <Box
-              onSubmit={ onSubmit }
+              onSubmit={onSubmit}
               styleSheet={{
                 display: "flex",
                 flexDirection: "column",
@@ -205,6 +184,7 @@ export default function HomeMobile() {
                 justifyContent: "center",
                 width: { xs: "100%", sm: "50%" },
                 textAlign: "center",
+                marginTop: "32px",
               }}
             >
               <Text
@@ -216,7 +196,7 @@ export default function HomeMobile() {
               <Button
                 type="submit"
                 label="Sing Up"
-                onClick={() => (state.button = 2 )}
+                onClick={() => (state.button = 2)}
                 styleSheet={{
                   textDecoration: "underline",
                   textColor: "white",
@@ -230,6 +210,52 @@ export default function HomeMobile() {
                 }}
               />
             </Box>
+
+            {/* <LogInTxt /> */}
+          </Box>
+
+          <Box
+            styleSheet={{
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              maxWidth: "200px",
+              padding: "16px",
+              backgroundColor: appConfig.theme.colors.neutrals[800],
+              border: "1px solid",
+              borderColor: appConfig.theme.colors.neutrals[999],
+              borderRadius: "10px",
+              flex: 1,
+              minHeight: "240px",
+            }}
+          >
+            <Image
+              styleSheet={{
+                borderRadius: "50%",
+                marginBottom: "16px",
+              }}
+              src={`https://github.com/${username}.png`}
+            />
+            <Text
+              tag="a"
+              href={`https://github.com/${username}`}
+              variant="body4"
+              styleSheet={{
+                textDecoration: "none",
+                color: appConfig.theme.colors.neutrals[200],
+                backgroundColor: appConfig.theme.colors.neutrals[900],
+                padding: "3px 10px",
+                borderRadius: "1000px",
+              }}
+              onMouseOver={(event) => {
+                event.target.style.textDecoration = "underline";
+              }}
+              onMouseLeave={(event) => {
+                event.target.style.textDecoration = "none";
+              }}
+            >
+              {username}
+            </Text>
           </Box>
         </Box>
       </Box>
