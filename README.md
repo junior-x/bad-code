@@ -15,8 +15,8 @@
 </p>
 
 <p align="center" float="left">
-    <img src="/assets/screen/react.png" width="100" /> 
-    <img src="/assets/screen/Figma.svg" width="100" /> 
+    <img src="/assets/screen/react.png" width="72" /> 
+    <img src="/assets/screen/Figma.svg" width="54" /> 
 </p>
 
 
@@ -40,13 +40,11 @@
 
 <p font-style="italic"> Vez ou outra acontece um erro de servidor " error Command failed with exit code 1. " isso acontece devido aos scripts estarem desatualizados, para isso deve-se realizar comandos para o update desses arquivos </p>
 
- ![App Preview](/assets/screen/y1.png)
-
-
- ![App Preview](/assets/screen/y2.png)
-
-
- ![App Preview](/assets/screen/y3.png)
+<p align="center">
+    <img src="/assets/screen/y1.png" width="450" /> 
+    <img src="/assets/screen/y2.png" width="450" /> 
+    <img src="/assets/screen/y3.png" width="450" /> 
+</p>
 
 ---
 
