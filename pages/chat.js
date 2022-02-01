@@ -1,9 +1,10 @@
-import { Box, Text, TextField, Image, Button } from "@skynexui/components";
+import { Box, Text, TextField, Image, Button, Icon } from "@skynexui/components";
 import React from "react";
 import appConfig from "../config.json";
 import { createClient } from "@supabase/supabase-js";
 import { useRouter } from "next/router";
 import DropdownUser from "./dropdownMenu";
+import { Scrollbars } from "react-custom-scrollbars";
 
 const SUPABASE_ANON_KEY =
   "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYW5vbiIsImlhdCI6MTY0MzMzMzIxMiwiZXhwIjoxOTU4OTA5MjEyfQ.lg1U3lHq63eu5OO2d0WmxQBDxVyqlQ6Ua9fBiS2Zo1Y";
@@ -85,8 +86,9 @@ export default function ChatPage() {
             padding: "16px",
           }}
         >
-          <MessageList mensagens={listaDeMensagens} />
-
+          <Scrollbars>
+            <MessageList mensagens={listaDeMensagens} />
+          </Scrollbars>
           <Box
             as="form"
             styleSheet={{
@@ -120,17 +122,8 @@ export default function ChatPage() {
                 marginRight: "12px",
                 color: appConfig.theme.colors.neutrals[200],
               }}
-            >
-              <Button
-                iconName="arrowRight"
-                buttonColors={{
-                  contrastColor: appConfig.theme.colors.neutrals["000"],
-                  mainColor: appConfig.theme.colors.primary[500],
-                  mainColorLight: appConfig.theme.colors.primary[400],
-                  mainColorStrong: appConfig.theme.colors.primary[600],
-                }}
-              />
-            </TextField>
+            />
+            {/* <Button styleSheet={{position: "absolute",}}/> */}
           </Box>
         </Box>
       </Box>
@@ -144,20 +137,16 @@ function Header() {
       <Box
         styleSheet={{
           width: "100%",
+          height: "10%",
           marginBottom: "16px",
           display: "flex",
           alignItems: "center",
           justifyContent: "space-between",
         }}
       >
+        <Box />
         <Text variant="heading5">Chat</Text>
         <DropdownUser />
-        {/* <Button
-          variant="tertiary"
-          colorVariant="neutral"
-          label="Logout"
-          href="/"
-        /> */}
       </Box>
     </>
   );
@@ -169,61 +158,59 @@ function MessageList(props) {
     <Box
       tag="ul"
       styleSheet={{
-        overflow: "scroll",
-        overflowX: "hidden",
-        display: "flex",
         flexDirection: "column-reverse",
+        overflow: "hidden",
+        display: "flex",
         flex: 1,
         color: appConfig.theme.colors.neutrals["000"],
         marginBottom: "16px",
       }}
     >
-      {props.mensagens.map((mensagem) => {
-        return (
-          <Text
-            key={mensagem.id}
-            tag="li"
-            styleSheet={{
-              borderRadius: "5px",
-              padding: "6px",
-              marginBottom: "12px",
-              hover: {
-                backgroundColor: appConfig.theme.colors.neutrals[700],
-              },
-            }}
-          >
-            <Box
+        {props.mensagens.map((mensagem) => {
+          return (
+            <Text
+              key={mensagem.id}
+              tag="li"
               styleSheet={{
-                marginBottom: "8px",
+                borderRadius: "5px",
+                padding: "6px",
+                marginBottom: "12px",
+                hover: {
+                  backgroundColor: appConfig.theme.colors.neutrals[700],
+                },
               }}
             >
-              <Image
+              <Box
                 styleSheet={{
-                  width: "20px",
-                  height: "20px",
-                  borderRadius: "50%",
-                  display: "inline-block",
-                  marginRight: "8px",
+                  marginBottom: "8px",
                 }}
-                src={`https://github.com/${mensagem.de}.png`}
-              />
-              <Text tag="strong">{mensagem.de}</Text>
-              <Text
-                styleSheet={{
-                  fontSize: "10px",
-                  marginLeft: "8px",
-                  color: appConfig.theme.colors.neutrals[300],
-                }}
-                tag="span"
               >
-                {new Date().toLocaleDateString()}
-              </Text>
-            </Box>
-            {mensagem.texto}
-          </Text>
-        );
-      })}
+                <Image
+                  styleSheet={{
+                    width: "20px",
+                    height: "20px",
+                    borderRadius: "50%",
+                    display: "inline-block",
+                    marginRight: "8px",
+                  }}
+                  src={`https://github.com/${mensagem.de}.png`}
+                />
+                <Text tag="strong">{mensagem.de}</Text>
+                <Text
+                  styleSheet={{
+                    fontSize: "10px",
+                    marginLeft: "8px",
+                    color: appConfig.theme.colors.neutrals[300],
+                  }}
+                  tag="span"
+                >
+                  {new Date().toLocaleDateString()}
+                </Text>
+              </Box>
+              {mensagem.texto}
+            </Text>
+          );
+        })}
     </Box>
   );
 }
-

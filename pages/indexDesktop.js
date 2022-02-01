@@ -20,7 +20,6 @@ function Titulo(props) {
   );
 }
 
-
 export default function HomeDesktop() {
   const [username, setUsername] = React.useState("junior-x");
   const roteamento = useRouter();
