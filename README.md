@@ -40,13 +40,13 @@
 
 <p font-style="italic"> Vez ou outra acontece um erro de servidor " error Command failed with exit code 1. " isso acontece devido aos scripts estarem desatualizados, para isso deve-se realizar comandos para o update desses arquivos </p>
 
- ![App Preview](/assets/screen/y1.PNG)
+ ![App Preview](/assets/screen/y1.png)
 
 
- ![App Preview](/assets/screen/y2.PNG)
+ ![App Preview](/assets/screen/y2.png)
 
 
- ![App Preview](/assets/screen/y3.PNG)
+ ![App Preview](/assets/screen/y3.png)
 
 ---
 
