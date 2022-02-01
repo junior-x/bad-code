@@ -49,7 +49,7 @@ export default function HomeDesktop() {
           flexDirection: "column",
           alignItems: "center",
           justifyContent: "center",
-          backgroundColor: "#FAFAFA",
+          background: "linear-gradient(#837FB1, #6964A6)",
         }}
       >
         <Box
@@ -61,15 +61,24 @@ export default function HomeDesktop() {
               xs: "column",
               md: "row",
             },
+            flexWrap: "wrap",
             width: "100%",
-            maxWidth: "720px",
+            maxWidth: "810px",
             borderRadius: "15px 15px 15px 15px",
+            border: "10%",
             padding: "32px",
+            paddingHorizontal: "30px",
+            paddingRight: "45px",
             boxShadow: "0 2px 10px 0 rgb(0 0 0 / 20%)",
             backgroundColor: `${appConfig.theme.colors.neutrals[700]}f1`,
-            boxShadow: "9px 9px #FAFAFA, 10px 10px #313D49",
+            boxShadow: "12px 12px #6964A6, 13px 13px #FFF",
           }}
         >
+        <Box styleSheet={{width: "100%", height: "15px", display: "flex",}}>
+          <Box styleSheet={{backgroundColor: "#FF656E", width: "15px", height: "15px", borderRadius: "15px 15px 15px 15px", marginRight: "1%",}}></Box>
+          <Box styleSheet={{backgroundColor: "#FFCD4E", width: "15px", height: "15px", borderRadius: "15px 15px 15px 15px", marginRight: "1%",}}></Box>
+          <Box styleSheet={{backgroundColor: "#A0F184", width: "15px", height: "15px", borderRadius: "15px 15px 15px 15px", marginRight: "1%",}}></Box>
+        </Box>
           <Box
             as="form"
             id="entrar"
@@ -82,6 +91,7 @@ export default function HomeDesktop() {
               width: { xs: "100%", sm: "60%" },
               textAlign: "center",
               marginTop: "32px",
+              paddingLeft: "36px",
             }}
           >
             <Titulo tag="h2">Bem Vindo de volta! :)</Titulo>
@@ -200,7 +210,6 @@ export default function HomeDesktop() {
               maxWidth: "200px",
               padding: "16px",
               backgroundColor: appConfig.theme.colors.neutrals[800],
-              border: "1px solid",
               borderColor: appConfig.theme.colors.neutrals[999],
               borderRadius: "10px",
               flex: 1,

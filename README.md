@@ -2,66 +2,96 @@
 
  <h1 align="center">bad-code</h1>
  <p align="center">🚀</p>
+ 
+ <p font-style="italic">Desenvolvimento de um site para Bate-Papo online</p>
 
- ![App Preview](/assets/screen/02.PNG)
-
-
-[<img src="/assets/screen/react.png" width="90px" align="center">](https://bad-code.vercel.app/ )
-
-[<img src="/assets/screen/Figma.svg" width="90px" align="center">](https://www.figma.com/@juniorx)
+ ![App Preview](/assets/screen/04.PNG)
 
 
-
-<p align="center" font-style="italic"> Site desenvolvido com o intuito de se identificar com o Discord durante o evento imersão Alura ReactJS/NextJS.  </p>
-
+<p align="center" font-style="italic"> Links para o SITE && PROJETO </p>
 
 <p align="center">
- <a href="#prototipo">Protótipo</a> •
+    https://bad-code.vercel.app    https://www.figma.com/@juniorx
+</p>
+
+<p align="center" float="left">
+    <img src="/assets/screen/react.png" width="100" /> 
+    <img src="/assets/screen/Figma.svg" width="100" /> 
 </p>
 
 
+<p align="center">
+ <a href="#prototipo">DEV & CMD</a> •
+</p>
+
+
+<p align="center" font-style="italic">Para a criação do site é utilizado o JavaScript junto ao framework ReactJS e SKYNEXUI para componentes com o intuito de ser um Bate-Papo online e cadastros de usuários sendo o a plataforma utilizado para o levantamento do projeto Vercel e facilitação do BackEnd o Supabase para DataBase e Nextjs para o servidor das API's. </p>
+
 ## Tables
 
-| Technologies  |
-| ------------- |
-| React      |
-| Next      |
+| Technologies              |  .
+:-------------------------:|:-------------------------:
+| Javascript      | Supabase      |
+| ReactJS      | Vercel      |
+| NextJS      | Skynexui      |
+
 
 ## Blocks of code
 
+<p font-style="italic"> Vez ou outra acontece um erro de servidor " error Command failed with exit code 1. " isso acontece devido aos scripts estarem desatualizados, para isso deve-se realizar comandos para o update desses arquivos </p>
 
-![App Preview](/assets/screen/01.PNG)
+ ![App Preview](/assets/screen/y1.PNG)
 
-<h1 href="#prototipo" align="center">🧪 PROTOTYPE</h1>
+
+ ![App Preview](/assets/screen/y2.PNG)
+
+
+ ![App Preview](/assets/screen/y3.PNG)
+
+---
+
+<h1 href="#prototipo" align="center">V 0.0.0</h1>
 
 [pt_BR]Desenvolvimento da estrutura de Interface do Usuário e integração com Versel através do NextJS. 
 
-[en_US]User Interface development using ReactJS integrating with NextJS to store API in Vercel data base. 
+[en_US]User Interface development using ReactJS integrating with NextJS to store API in Supabase data base and deplyng on Vercel AWS machines. 
 
+![App Preview](/assets/screen/01.PNG)
 
 ---
 
+<h1 href="#prototipo" align="center">V 0.0.1</h1>
+
+[pt_BR]Implementação do campo de senhas e componentes para a tela de cadastro. 
+
+[en_US]Password field component and Sing Up route screen. 
+
+
+---
 
 ![App Preview](/assets/screen/02.PNG)
 
-<h1 href="#prototipo" align="center">🧪 PROTOTYPE</h1>
+--- 
 
-[pt_BR]Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+<h1 href="#prototipo" align="center">V 0.0.3</h1>
 
-[en_US]Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+[pt_BR]Rascunho de tela do cadastro do usuário para coleta de dados utilizando o Supabase para o DataBase. 
+
+[en_US]Sing Up sketch for the users to collect some infos and store in Supabase DataBase. 
+
+![App Preview](/assets/screen/03.PNG)
 
 
 ---
 
 
-![App Preview](/assets/screen/03.PNG)
+<h1 href="#prototipo" align="center">V 0.1.0</h1>
 
-<h1 href="#prototipo" align="center">🧪 PROTOTYPE</h1>
+[pt_BR]Estilização e Animação de componentes utilizando SKYNEXUI para os modals e CSS para os estilos sem roteamento na API. 
 
-[pt_BR]Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+[en_US]Styles and Animations on components usying SKYNEXYUI for modals and CSS styleSheet without API root. 
 
-[en_US]Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-
+![App Preview](/assets/screen/04.PNG)
 
 ---
 
