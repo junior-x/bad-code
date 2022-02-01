@@ -3,7 +3,7 @@
  <h1 align="center">bad-code</h1>
  <p align="center">🚀</p>
  
- <p><em>Desenvolvimento de um site para Bate-Papo online</p>
+ <p align="center"><em>Desenvolvimento de um site para Bate-Papo online</p>
 
  ![App Preview](/assets/screen/04.PNG)
 
