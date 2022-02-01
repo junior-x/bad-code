@@ -8,7 +8,7 @@
  ![App Preview](/assets/screen/04.PNG)
 
 
-<p align="center" font-style="italic"> Links para o SITE && PROJETO </p>
+<p align="center"> <em>Links para o SITE && PROJETO </p>
 
 <p align="center">
     https://bad-code.vercel.app    https://www.figma.com/@juniorx
@@ -25,7 +25,7 @@
 </p>
 
 
-<p align="center" font-style="italic">Para a criação do site é utilizado o JavaScript junto ao framework ReactJS e SKYNEXUI para componentes com o intuito de ser um Bate-Papo online e cadastros de usuários sendo o a plataforma utilizado para o levantamento do projeto Vercel e facilitação do BackEnd o Supabase para DataBase e Nextjs para o servidor das API's. </p>
+<p align="center"> <em>Para a criação do site é utilizado o JavaScript junto ao framework ReactJS e SKYNEXUI para componentes com o intuito de ser um Bate-Papo online e cadastros de usuários sendo o a plataforma utilizado para o levantamento do projeto Vercel e facilitação do BackEnd o Supabase para DataBase e Nextjs para o servidor das API's. </p>
 
 ## Tables
 
@@ -38,7 +38,7 @@
 
 ## Blocks of code
 
-<p font-style="italic"> Vez ou outra acontece um erro de servidor " error Command failed with exit code 1. " isso acontece devido aos scripts estarem desatualizados, para isso deve-se realizar comandos para o update desses arquivos </p>
+<p> <em> Vez ou outra acontece um erro de servidor " error Command failed with exit code 1. " isso acontece devido aos scripts estarem desatualizados, para isso deve-se realizar comandos para o update desses arquivos </p>
 
 <p align="center">
     <img src="/assets/screen/y1.png" width="450" /> 

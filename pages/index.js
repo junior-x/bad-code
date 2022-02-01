@@ -1,10 +1,11 @@
 import React from "react";
-import App from "./App";
+import IndexDesktop from "./indexDesktop"
+// import App from "./App";
 
 function LogIn() {
   return (
     <>
-      <App />
+      <IndexDesktop />
     </>
   );
 }
