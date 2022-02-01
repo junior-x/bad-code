@@ -35,7 +35,7 @@ export default function HomeDesktop() {
       roteamento.push(`/chat?username=${username}`);
     }
     if (state.button === 2) {
-      roteamento.push(`/singUp`);
+      roteamento.push(`/singUpDesktop`);
     }
   };
 
