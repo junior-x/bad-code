@@ -6,12 +6,20 @@
   "author": "junior-x <marcosmansur@outlook.com>",
   "license": "MIT",
   "dependencies": {
+    "@modulz/radix-icons": "^4.0.0",
+    "@radix-ui/colors": "^0.1.8",
+    "@radix-ui/react-accessible-icon": "^0.1.3",
+    "@radix-ui/react-dropdown-menu": "^0.1.4",
+    "@radix-ui/react-icons": "^1.0.3",
+    "@radix-ui/react-popover": "^0.1.4",
     "@skynexui/components": "^1.24.1",
+    "@stitches/react": "^1.2.6",
     "@supabase/supabase-js": "^1.29.4",
     "next": "^12.0.8",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-responsive": "^9.0.0-beta.6",
+    "react-transition-group": "^4.4.2",
     "yarn": "^1.22.17"
   },
   "scripts": {

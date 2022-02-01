@@ -3,6 +3,7 @@ import React from "react";
 import appConfig from "../config.json";
 import { createClient } from "@supabase/supabase-js";
 import { useRouter } from "next/router";
+import DropdownUser from "./dropdownMenu";
 
 const SUPABASE_ANON_KEY =
   "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYW5vbiIsImlhdCI6MTY0MzMzMzIxMiwiZXhwIjoxOTU4OTA5MjEyfQ.lg1U3lHq63eu5OO2d0WmxQBDxVyqlQ6Ua9fBiS2Zo1Y";
@@ -150,12 +151,13 @@ function Header() {
         }}
       >
         <Text variant="heading5">Chat</Text>
-        <Button
+        <DropdownUser />
+        {/* <Button
           variant="tertiary"
           colorVariant="neutral"
           label="Logout"
           href="/"
-        />
+        /> */}
       </Box>
     </>
   );
@@ -224,3 +226,4 @@ function MessageList(props) {
     </Box>
   );
 }
+

@@ -93,4 +93,15 @@
 
 ---
 
+
+<h1 href="#prototipo" align="center">V 0.1.1</h1>
+
+[pt_BR]Implementação do menu Dropdown de usuário com apens a função logout. 
+
+[en_US]Dropdown menu implementation for users only with logout working so far. 
+
+![App Preview](/assets/screen/05.PNG)
+
+---
+
 <h1 align="center">🍕</h1>

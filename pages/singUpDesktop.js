@@ -55,6 +55,7 @@ export default function SingUpDesktop() {
             display: "flex",
             alignItems: "center",
             justifyContent: "space-between",
+            flexWrap: "wrap",
             flexDirection: {
               xs: "column",
               md: "row",
@@ -62,13 +63,19 @@ export default function SingUpDesktop() {
             width: "100%",
             maxWidth: "900px",
             borderRadius: "15px 15px 15px 15px",
-            paddingHorizontal: "90px",
+            paddingHorizontal: "30px",
+            paddingRight: "45px",
             paddingVertical: "30px",
             boxShadow: "0 2px 10px 0 rgb(0 0 0 / 20%)",
             backgroundColor: `${appConfig.theme.colors.neutrals[700]}f1`,
             boxShadow: "9px 9px #837FB1, 10px 10px #313D49",
           }}
         >
+          <Box styleSheet={{width: "100%", height: "15px", display: "flex",}}>
+          <Box styleSheet={{backgroundColor: "#FF656E", width: "15px", height: "15px", borderRadius: "15px 15px 15px 15px", marginRight: "1%",}}></Box>
+          <Box styleSheet={{backgroundColor: "#FFCD4E", width: "15px", height: "15px", borderRadius: "15px 15px 15px 15px", marginRight: "1%",}}></Box>
+          <Box styleSheet={{backgroundColor: "#A0F184", width: "15px", height: "15px", borderRadius: "15px 15px 15px 15px", marginRight: "1%",}}></Box>
+        </Box>
           <Box
             as="form"
             onSubmit={onSubmit}
@@ -79,6 +86,7 @@ export default function SingUpDesktop() {
               justifyContent: "center",
               width: { xs: "100%", sm: "60%" },
               marginTop: "32px",
+              paddingLeft: "21px",
             }}
           >
             <Titulo tag="h2">Sing Up! :)</Titulo>
@@ -191,11 +199,11 @@ export default function SingUpDesktop() {
                 variant="body3"
                 styleSheet={{ color: appConfig.theme.colors.neutrals[300] }}
               >
-                Não tem cadastro?
+                Já possui cadastro?
               </Text>
               <Button
                 type="submit"
-                label="Sing Up"
+                label="Log In"
                 onClick={() => (state.button = 2)}
                 styleSheet={{
                   textDecoration: "underline",
