@@ -3,12 +3,12 @@
  <h1 align="center">bad-code</h1>
  <p align="center">🚀</p>
  
- <p font-style="italic">Desenvolvimento de um site para Bate-Papo online</p>
+ <p><em>Desenvolvimento de um site para Bate-Papo online</p>
 
  ![App Preview](/assets/screen/04.PNG)
 
 
-<p align="center"> <em>Links para o SITE && PROJETO </p>
+<p align="center"><em>Links para o SITE && PROJETO </p>
 
 <p align="center">
     https://bad-code.vercel.app    https://www.figma.com/@juniorx
