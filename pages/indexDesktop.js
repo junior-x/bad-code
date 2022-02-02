@@ -1,5 +1,5 @@
 import { Box, Button, Text, TextField, Image, Icon } from "@skynexui/components";
-import React, { useEffect, useRef } from "react";
+import React from "react";
 import appConfig from "../config.json";
 import { useRouter } from "next/router";
 import PopUp from "./popUp";
@@ -38,17 +38,7 @@ export default function HomeDesktop() {
       roteamento.push(`/singUpDesktop`);
     }
   };
-
-  // const popRef = useRef();
-
-  // useEffect(() => {
-  //   document.addEventListener("mousedown", (event) => {
-  //     if (!popRef.current.contains(event.target)) {
-  //       setIsOpen(false)
-  //     }
-  //   })
-  // })
-
+  
   return (
     <>
       <Box
