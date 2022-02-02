@@ -5,7 +5,7 @@
  
  <p align="center"><em>Desenvolvimento de um site para Bate-Papo online</p>
 
- ![App Preview](/assets/screen/04.PNG)
+ ![App Preview](/assets/screen/06.PNG)
 
 
 <p align="center"><em>Links para o SITE && PROJETO </p>
@@ -101,6 +101,17 @@
 [en_US]Dropdown menu implementation for users only with logout working so far. 
 
 ![App Preview](/assets/screen/05.PNG)
+
+---
+
+
+<h1 href="#prototipo" align="center">V 0.1.1</h1>
+
+[pt_BR]Teste de aplicação com animação utilizando API Json otimizando o site com uma popup educativa leve. 
+
+[en_US]Aplication test with animations from API Json to get the best perfomance usying a simple educated popup. 
+
+![App Preview](/assets/screen/06.PNG)
 
 ---
 

@@ -1,7 +1,8 @@
 import { Box, Button, Text, TextField, Image, Icon } from "@skynexui/components";
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import appConfig from "../config.json";
 import { useRouter } from "next/router";
+import PopUp from "./popUp";
 
 function Titulo(props) {
   
@@ -38,6 +39,16 @@ export default function HomeDesktop() {
     }
   };
 
+  // const popRef = useRef();
+
+  // useEffect(() => {
+  //   document.addEventListener("mousedown", (event) => {
+  //     if (!popRef.current.contains(event.target)) {
+  //       setIsOpen(false)
+  //     }
+  //   })
+  // })
+
   return (
     <>
       <Box
@@ -73,6 +84,7 @@ export default function HomeDesktop() {
             boxShadow: "12px 12px #6964A6, 13px 13px #FFF",
           }}
         >
+        {/* <Box styleSheet={{backgroundColor: "white", position: "absolute", height: "90px", width: "90px",}} ></Box> */}
         <Box styleSheet={{width: "100%", height: "15px", display: "flex",}}>
           <Box styleSheet={{backgroundColor: "#FF656E", width: "15px", height: "15px", borderRadius: "15px 15px 15px 15px", marginRight: "1%",}}></Box>
           <Box styleSheet={{backgroundColor: "#FFCD4E", width: "15px", height: "15px", borderRadius: "15px 15px 15px 15px", marginRight: "1%",}}></Box>
@@ -147,6 +159,7 @@ export default function HomeDesktop() {
                 mainColorStrong: appConfig.theme.colors.primary[600],
               }}
             />
+            <PopUp />
             <Box
               styleSheet={{
                 display: "flex",
