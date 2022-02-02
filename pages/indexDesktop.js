@@ -3,6 +3,7 @@ import React from "react";
 import appConfig from "../config.json";
 import { useRouter } from "next/router";
 import PopUp from "./popUp";
+import UserBalloon from "./userBalloon";
 
 function Titulo(props) {
   
@@ -218,6 +219,7 @@ export default function HomeDesktop() {
               minHeight: "240px",
             }}
           >
+          <UserBalloon ></UserBalloon>
             <Image
               styleSheet={{
                 borderRadius: "50%",

@@ -47,7 +47,7 @@ export default function SingUpDesktop() {
           flexDirection: "column",
           alignItems: "center",
           justifyContent: "center",
-          backgroundColor: "#837FB1",
+          background:  "linear-gradient(#837FB1, #6964A6)",
         }}
       >
         <Box
@@ -68,7 +68,7 @@ export default function SingUpDesktop() {
             paddingVertical: "30px",
             boxShadow: "0 2px 10px 0 rgb(0 0 0 / 20%)",
             backgroundColor: `${appConfig.theme.colors.neutrals[700]}f1`,
-            boxShadow: "9px 9px #837FB1, 10px 10px #313D49",
+            boxShadow: "9px 9px #6964A6, 10px 10px #313D49",
           }}
         >
           <Box styleSheet={{width: "100%", height: "15px", display: "flex",}}>
